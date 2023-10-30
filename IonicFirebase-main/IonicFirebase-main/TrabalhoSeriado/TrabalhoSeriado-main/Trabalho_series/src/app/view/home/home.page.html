@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title id="title">
+      Lista de Series
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-list *ngFor="let serie of this.listaSeries; let i = index">
+      <ion-item (click)="editar(serie)">
+        <ion-avatar><img src="{{serie.downloadURL}}" /></ion-avatar>
+        <ion-label id="item">{{ serie.nome }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-fab horizontal="end" vertical="bottom">
+      <ion-fab-button (click)="irParaCadastro()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>

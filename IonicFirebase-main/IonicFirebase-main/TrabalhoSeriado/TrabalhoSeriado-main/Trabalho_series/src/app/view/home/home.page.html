@@ -1,16 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title id="title">
-      Lista de Series
+      Lista de Séries
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-list *ngFor="let serie of this.listaSeries; let i = index">
-      <ion-item (click)="editar(serie)">
-        <ion-avatar><img src="{{serie.downloadURL}}" /></ion-avatar>
-        <ion-label id="item">{{ serie.nome }}</ion-label>
+    <ion-list *ngFor="let itens of this.listaSeries">
+      <ion-item (click)="editar(itens)">
+        <ion-avatar><img src="{{itens.downloadURL}}" /></ion-avatar>
+        <ion-label>{{itens.nome}}</ion-label>
       </ion-item>
     </ion-list>
 

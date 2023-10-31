@@ -28,8 +28,8 @@ export class EditarPage implements OnInit {
     this.itens = history.state.itens;
     this.nome = this.itens.nome;
     this.lancamento = this.itens.lancamento;
-    this.temporadas = this.itens.temporadas;
     this.diretor = this.itens.diretor;
+    this.temporadas = this.itens.temporadas;
     this.genero = this.itens.genero;
 
 

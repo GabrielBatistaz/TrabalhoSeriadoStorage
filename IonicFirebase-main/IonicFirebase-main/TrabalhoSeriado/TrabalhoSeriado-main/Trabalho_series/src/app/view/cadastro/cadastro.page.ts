@@ -29,12 +29,11 @@ export class CadastroPage implements OnInit {
 
   }
   uploadFile(imagem:any){
-    this.imagem = imagem.file;
+    this.imagem = imagem.files;
   }
 
   cadastro(){
     if(this.nome){
-      if(this.nome.length>=3){
       let novo : Itens = new Itens(this.nome);
       novo.lancamento = this.lancamento;
       novo.diretor = this.diretor;
@@ -47,13 +46,12 @@ export class CadastroPage implements OnInit {
         })
       }else{
         this.firebase.cadastro(novo)
-        .then(() =>  this.router.navigate(["/home"]))
+        .then(() => this.router.navigate(["/home"]))
         .catch((error) => {
           console.log(error);
           this.presentAlert("Erro", "Erro ao salvar Série!");
         })
       }
-    }
     }else{
       this.presentAlert("Erro", "Nome é um campo Obrigatório!");
     }

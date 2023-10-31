@@ -56,8 +56,8 @@ export class Itens {
         return this._genero;
     }
 
-    public set genero(genero: number){
-        this._genero = genero;
+    public set genero(value: number){
+        this._genero = value;
     }
 
     public get downloadURL(): any {
